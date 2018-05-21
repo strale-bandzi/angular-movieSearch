@@ -1,0 +1,22 @@
+<div *ngIf="movie">
+        <div class="card text-white bg-primary mb-3">
+                <div class="card-header">{{movie.title}}</div>
+                <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                            <img *ngIf="movie.poster_path" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="" class="img-fluid img-thumbnail">
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="list-group my-2">
+                            <li class="list-group-item list-group-item-info">Genres: <span *ngFor="let genre of movie.genres">
+                            {{genre.name}}
+                            </span></li>
+                            <li class="list-group-item list-group-item-info">Release Date: {{movie.release_date}}</li>
+                        </ul> 
+                        <br>
+                          <a *ngIf="movie.homepage" class="btn btn-outline-dark text-light" href="{{movie.homepage}}" target="_blank">Visit movie website</a>
+                        </div>
+                    </div>
+                </div>
+        </div>
+</div>
